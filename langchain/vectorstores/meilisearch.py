@@ -26,9 +26,9 @@ def _create_client(
             "Please install it with `pip install meilisearch`."
         )
     if not client:
-        url = url or get_from_env("url", "MEILISEARCH_HOST_URL")
+        url = url or get_from_env("url", "MEILI_HTTP_ADDR")
         try:
-            api_key = get_from_env("api_key", "MEILISEARCH_MASTER_KEY")
+            api_key = get_from_env("api_key", "MEILI_MASTER_KEY")
         except Exception:
             pass
         client = meilisearch.Client(url=url, api_key=api_key)
